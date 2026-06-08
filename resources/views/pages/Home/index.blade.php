@@ -13,4 +13,6 @@ new class extends Component
 @section('content')
     <x-hero-section />
     <x-mission-vision-section />
+    <x-recent-events />
+    <x-contact-form />
 @endsection

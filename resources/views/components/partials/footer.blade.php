@@ -59,7 +59,7 @@ new class extends Component
     </div>
 
     <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-slate-500">© {{ date('Y') }} Philippine Society of Anesthesiologists (PSA). All Rights Reserved.</p>
+      <p class="text-xs text-slate-500">© {{ date('Y') }} Philippine Society of Anesthesiologists (PSA). All Rights Reserved.</p> 
     </div>
   </div>
 </footer>
