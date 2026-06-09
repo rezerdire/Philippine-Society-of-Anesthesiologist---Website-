@@ -22,21 +22,21 @@ new class extends Component
 
       {{-- Desktop Nav --}}
       <div class="hidden lg:flex items-center gap-0.5">
-        <a href="{{ route('home') }}" class="nav-link px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors">Home</a>
+        <a wire:navigate href="{{ route('home') }}" class="nav-link px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors">Home</a>
 
         {{-- About Us Dropdown --}}
         <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
           <button class="nav-link flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors">
             About Us
-            {{-- <svg class="w-3 h-3 opacity-50" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="w-3 h-3 opacity-50" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
                class="absolute top-full left-0 mt-1 w-52 bg-white border border-slate-100 rounded-xl shadow-xl shadow-slate-200/60 py-1 z-50">
-            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">Officers &amp; Board</a>
-            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">Subspecialty &amp; SIG</a>
-            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">Chapter Presidents</a>
-            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">Past Presidents</a>
-          </div> --}}
+            <a wire:navigate href="{{ route('Office-and-board') }}" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">Officers &amp; Board</a>
+            <a wire:navigate href="{{ route('SubSpecialty-SIG') }}" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">Subspecialty &amp; SIG</a>
+            <a wire:navigate href="{{ route('Chapter-Presidents') }}" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">Chapter Presidents</a>
+            <a wire:navigate href="{{ route('Legacy') }}" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">Past Presidents</a>
+          </div>
         </div>
 
         {{-- CME Activities Dropdown --}}
@@ -61,9 +61,9 @@ new class extends Component
           </button>
           <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
                class="absolute top-full left-0 mt-1 w-44 bg-white border border-slate-100 rounded-xl shadow-xl shadow-slate-200/60 py-1 z-50">
-            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">ACA 2025 — Day 1</a>
-            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">ACA 2025 — Day 2</a>
-            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">ACA 2025 — Day 3</a>
+            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">ACA 2025 - Day 1</a>
+            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">ACA 2025 - Day 2</a>
+            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">ACA 2025 - Day 3</a>
           </div>
         </div>
 
@@ -80,12 +80,29 @@ new class extends Component
     </div>
 
     {{-- Mobile menu --}}
-    <div x-show="mobileOpen" x-transition class="lg:hidden border-t border-slate-100 py-3">
-      <a href="{{ route('home') }}" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Home</a>
-      <a href="#" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">About Us</a>
-      <a href="#" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">CME Activities</a>
-      <a href="#" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Gallery</a>
-      <a href="#" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Membership</a>
+    {{-- Mobile menu --}}
+<div x-show="mobileOpen" x-transition class="lg:hidden border-t border-slate-100 py-3">
+  <a href="{{ route('home') }}" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Home</a>
+
+  {{-- About Us accordion --}}
+  <div x-data="{ aboutOpen: false }">
+    <button @click="aboutOpen = !aboutOpen" class="w-full flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">
+      About Us
+      <svg class="w-3 h-3 opacity-50 transition-transform duration-200" :class="{ 'rotate-180': aboutOpen }" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div x-show="aboutOpen" x-transition class="pl-4">
+      <a wire:navigate href="{{ route('Office-and-board') }}" class="block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Officers &amp; Board</a>
+      <a wire:navigate href="{{ route('SubSpecialty-SIG') }}" class="block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Subspecialty &amp; SIG</a>
+      <a wire:navigate href="{{ route('Chapter-Presidents') }}" class="block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Chapter Presidents</a>
+      <a wire:navigate href="{{ route('Legacy') }}" class="block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Past Presidents</a>
     </div>
+  </div>
+
+  <a wire:navigate href="#" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">CME Activities</a>
+  <a wire:navigate href="#" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Gallery</a>
+  <a wire:navigate href="#" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Membership</a>
+</div>
   </div>
 </nav>

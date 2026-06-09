@@ -16,3 +16,4 @@ new class extends Component
     <x-recent-events />
     <x-contact-section />
 @endsection
+
