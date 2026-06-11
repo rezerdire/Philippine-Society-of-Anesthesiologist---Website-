@@ -54,18 +54,8 @@ new class extends Component
         </div>
 
         {{-- Gallery Dropdown --}}
-        <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-          <button class="nav-link flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors">
-            Gallery
-            <svg class="w-3 h-3 opacity-50" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-               class="absolute top-full left-0 mt-1 w-44 bg-white border border-slate-100 rounded-xl shadow-xl shadow-slate-200/60 py-1 z-50">
-            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">ACA 2025 - Day 1</a>
-            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">ACA 2025 - Day 2</a>
-            <a href="#" class="block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">ACA 2025 - Day 3</a>
-          </div>
-        </div>
+               <a wire:navigate href="{{ route('Gallery') }}" class="nav-link px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors">Gallery</a>
+
 
         <a href="#" class="ml-2 px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm">Membership </a>
       </div>
@@ -101,7 +91,7 @@ new class extends Component
   </div>
 
   <a wire:navigate href="#" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">CME Activities</a>
-  <a wire:navigate href="#" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Gallery</a>
+  <a wire:navigate href="{{ route('Gallery') }}" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Gallery</a>
   <a wire:navigate href="#" class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Membership</a>
 </div>
   </div>
